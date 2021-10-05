@@ -1,13 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auto_route/routes/router.dart';
-import 'package:flutter_auto_route/routes/router.gr.dart';
 import 'package:flutter_auto_route/views/ui/fifth_page.dart';
+import 'package:flutter_auto_route/views/ui/first_page.dart';
 import 'package:flutter_auto_route/views/ui/sixth_page.dart';
-import 'package:flutter_auto_route/views/ui/third_page.dart';
 
 class FourthPage extends StatefulWidget {
-  const FourthPage({Key? key}) : super(key: key);
+  final String? query1;
+  final String? query2;
+  const FourthPage({
+    Key? key,
+    @QueryParam('username') this.query1,
+    @QueryParam('password') this.query2,
+  }) : super(key: key);
 
   @override
   State<FourthPage> createState() => _FourthPageState();
@@ -16,20 +20,13 @@ class FourthPage extends StatefulWidget {
 class _FourthPageState extends State<FourthPage> {
   int _selectedIndex = 0;
   static const List<Widget> _pages = [
-    ThirdPage(),
+    FirstPage(),
     FifthPage(),
     SixthPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsScaffold(
-      routes: const [
-        ThirdRoute(),
-        ThirdRoute(),
-        ThirdRoute(),
-      ],
-    );
     return Scaffold(
       body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(

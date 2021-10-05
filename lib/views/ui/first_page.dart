@@ -15,7 +15,8 @@ class FirstPage extends StatelessWidget {
           const Text("FirstPage"),
           IconButton(
             icon: const Icon(Icons.access_alarm),
-            onPressed: () => appRouter.push(const SecondRoute()),
+            onPressed: () =>
+                appRouter.push(SecondRoute(args: "ARGS to Second")),
           ),
         ],
       ),

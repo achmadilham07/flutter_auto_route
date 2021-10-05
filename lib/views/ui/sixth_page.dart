@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auto_route/routes/router.dart';
-import 'package:flutter_auto_route/routes/router.gr.dart';
 
 class SixthPage extends StatelessWidget {
   const SixthPage({Key? key}) : super(key: key);
