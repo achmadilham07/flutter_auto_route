@@ -25,10 +25,12 @@ class ThirdPage extends StatelessWidget {
           Text(bookId ?? "empty 54"),
           IconButton(
             icon: const Icon(Icons.kayaking),
-            onPressed: () => appRouter.push(FourthRoute(
-              query1: "belajarubic",
-              // query2: "passwordloo",
-            )),
+            onPressed: () => appRouter.push(
+              FourthRoute(
+                query1: "belajarubic",
+                // query2: "passwordloo",
+              ),
+            ),
           ),
         ],
       ),

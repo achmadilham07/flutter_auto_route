@@ -3,6 +3,7 @@ import 'package:flutter_auto_route/views/ui/first_page.dart';
 import 'package:flutter_auto_route/views/ui/fourth_page.dart';
 import 'package:flutter_auto_route/views/ui/second_page.dart';
 import 'package:flutter_auto_route/views/ui/third_page.dart';
+import 'package:flutter_auto_route/views/ui/wrong_page.dart';
 
 import 'router.gr.dart';
 
@@ -19,6 +20,8 @@ final appRouter = AppRouter();
     AutoRoute(page: SecondPage, path: '/second'),
     AutoRoute(page: ThirdPage, path: '/third/:id'),
     AutoRoute(page: FourthPage, path: '/fourth'),
+    AutoRoute(page: WrongPage, path: '/wrong'),
+    RedirectRoute(path: '*', redirectTo: '/wrong')
   ],
 )
 class $AppRouter {}
