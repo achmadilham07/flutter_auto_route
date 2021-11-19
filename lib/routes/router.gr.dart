@@ -12,10 +12,15 @@ import '../views/ui/fourth_page.dart' as _i4;
 import '../views/ui/second_page.dart' as _i2;
 import '../views/ui/third_page.dart' as _i3;
 import '../views/ui/wrong_page.dart' as _i5;
+import 'route_guard.dart' as _i8;
 
 class AppRouter extends _i6.RootStackRouter {
-  AppRouter([_i7.GlobalKey<_i7.NavigatorState>? navigatorKey])
+  AppRouter(
+      {_i7.GlobalKey<_i7.NavigatorState>? navigatorKey,
+      required this.authGuard})
       : super(navigatorKey);
+
+  final _i8.AuthGuard authGuard;
 
   @override
   final Map<String, _i6.PageFactory> pagesMap = {
@@ -59,7 +64,8 @@ class AppRouter extends _i6.RootStackRouter {
   List<_i6.RouteConfig> get routes => [
         _i6.RouteConfig(FirstRoute.name, path: '/'),
         _i6.RouteConfig(SecondRoute.name, path: '/second'),
-        _i6.RouteConfig(ThirdRoute.name, path: '/third/:id'),
+        _i6.RouteConfig(ThirdRoute.name,
+            path: '/third/:id', guards: [authGuard]),
         _i6.RouteConfig(FourthRoute.name, path: '/fourth'),
         _i6.RouteConfig(WrongRoute.name, path: '/wrong'),
         _i6.RouteConfig('*#redirect',

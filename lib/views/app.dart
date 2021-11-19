@@ -9,7 +9,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerDelegate: appRouter.delegate(),
-      routeInformationParser: appRouter.defaultRouteParser(),
+      routeInformationParser:
+          appRouter.defaultRouteParser(includePrefixMatches: true),
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
